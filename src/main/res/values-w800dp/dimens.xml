@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- list -->
+    <dimen name="article_list_recyclerview_margin_left">64dp</dimen>
+    <dimen name="article_list_recyclerview_margin_right">64dp</dimen>
+    <dimen name="article_list_toolbar_margin_side">52dp</dimen> <!-- minus 64 - 12 -->
+    <integer name="article_list_column_count">3</integer>
+
+    <!-- detail -->
+    <dimen name="detail_card_max_width">704dp</dimen>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="DetailArticleCardView">
+        <item name="android:background">@color/cardview_light_background</item>
+    </style>
+</resources>

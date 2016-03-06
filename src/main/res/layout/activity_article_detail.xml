@@ -1,0 +1,81 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- attempted to use AppBarLayout, is not good, even with transparent background
+    toolbar and status bar both cast shadows of different elevations as seems elevation is enabled
+    by default. The elevation needs to be disabled. Also if pursuing this solution,
+    source code requires adjustment of UP button position on scrolling ...
+    As there is no explicit requirement for this activity to have AppBarLayout, let's leave
+    existing implementation with FrameLayout and ImageButton -->
+
+    <!--
+    <android.support.design.widget.AppBarLayout
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <FrameLayout
+            android:id="@+id/up_container"
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:background="@android:color/transparent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:longClickable="false">
+
+            <ImageButton
+                style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                android:elevation="@dimen/toolbar_elevation"
+                android:id="@+id/action_up"
+                android:layout_width="56dp"
+                android:layout_height="wrap_content"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/up"
+                android:src="@drawable/ic_arrow_back" />
+
+            </android.support.v7.widget.Toolbar>
+        </FrameLayout>
+    </android.support.design.widget.AppBarLayout>
+    -->
+
+    <FrameLayout
+        android:id="@+id/up_container"
+        android:background="@android:color/transparent"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize">
+
+        <ImageButton
+            style="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:elevation="@dimen/toolbar_elevation"
+            android:id="@+id/action_up"
+            android:layout_width="56dp"
+            android:layout_height="?actionBarSize"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="@string/up"
+            android:src="@drawable/ic_arrow_back" />
+    </FrameLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/share_fab"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_share"
+        android:layout_gravity="bottom|end"
+        app:elevation="@dimen/fab_elevation"
+        android:contentDescription="@string/action_share"/>
+
+</FrameLayout>

@@ -1,0 +1,69 @@
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/article_list_item_margin_left"
+    android:layout_marginLeft="@dimen/article_list_item_margin_left"
+    android:layout_marginRight="@dimen/article_list_item_margin_right"
+    android:layout_marginEnd="@dimen/article_list_item_margin_right"
+    android:layout_marginTop="@dimen/article_list_item_margin_top"
+    android:layout_marginBottom="@dimen/article_list_item_margin_bottom"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- AlexSt: class 'DynamicHeightNetworkImageView' is not used  as I needed to have access
+        to image bitmap to create a muted color from it for article title background.
+        As this class didn't provide access to image bitmap, I used regular ImageView as a base
+        class for 'DynamicHeight' image view -->
+
+        <!--suppress AndroidLintContentDescription -->
+        <!--<com.example.xyzreader.ui.DynamicHeightNetworkImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/photo_placeholder" />-->
+
+        <com.example.xyzreader.ui.DynamicHeightImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/photo_placeholder" />
+
+        <TextView
+            android:id="@+id/article_title"
+            style="@style/ListArticleTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/article_list_item_title_padding_left"
+            android:paddingLeft="@dimen/article_list_item_title_padding_left"
+            android:paddingTop="@dimen/article_list_item_title_padding_top"
+            android:paddingRight="@dimen/article_list_item_title_padding_right"
+            android:paddingEnd="@dimen/article_list_item_title_padding_right"
+            android:paddingBottom="@dimen/article_list_item_title_padding_bottom"
+            android:ellipsize="end"
+            android:maxLines="@integer/article_list_item_title_max_lines"/>
+
+        <TextView
+            android:id="@+id/article_subtitle"
+            style="@style/ListArticleSubTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/article_list_item_subtitle_padding_left"
+            android:paddingLeft="@dimen/article_list_item_subtitle_padding_left"
+            android:paddingRight="@dimen/article_list_item_subtitle_padding_right"
+            android:paddingEnd="@dimen/article_list_item_subtitle_padding_right"
+            android:paddingTop="@dimen/article_list_item_subtitle_padding_top"
+            android:paddingBottom="@dimen/article_list_item_subtitle_padding_bottom"
+            android:maxLines="@integer/article_list_item_subtitle_max_lines"
+            android:singleLine="false"
+            android:ellipsize="end" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
